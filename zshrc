@@ -7,8 +7,7 @@ fi
 # CD Paths
 
 typeset -U cdpath
-cdpath=( "$HOME/Development/omfclients" $cdpath )
-cdpath=( "$HOME/Development/springleaf" $cdpath )
+cdpath=( "$HOME/Development/omf" $cdpath )
 
 # Auto Complete
 if type brew &>/dev/null; then
