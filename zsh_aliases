@@ -2,3 +2,4 @@ alias ls="ls -G"
 alias ll="ls -Glh"
 alias check-path='echo $path | sed s/\ /\\n/g'
 alias export_dotenv='export $(cat .env | xargs)'
+alias ports="lsof -iTCP -sTCP:LISTEN -P -n"

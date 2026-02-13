@@ -5,13 +5,18 @@ eval "$(/opt/homebrew/bin/brew shellenv)" eval export HOMEBREW_PREFIX="/opt/home
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
 
+## NodeJS
+#export NODE_OPTIONS="--use-system-ca" # For Nodejs v23 or above
+### This pem certificate was created by concatenating all the
+### certificates that start with corp-fin-rsa-* from the keychain
+export NODE_EXTRA_CA_CERTS="$HOME/.certs/certs.pem"
+
 ## OMF Specific
 export DISABLE_SPRING=true
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=true
 export OMFPATH="$HOME/Development/omf"
 
 ## Path
-#PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/jamf/bin"; export PATH;
 typeset -U path
 path=("${ASDF_DATA_DIR:-$HOME/.asdf}/shims" $path)
 path=('/usr/local/jamf/bin' $path)
